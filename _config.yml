@@ -2,16 +2,16 @@
 title: Lokmont
 description: Lokmont is a responsive simple theme for Jekyll.
 baseurl: "" # the subpath of your site, e.g. /blog
-url: "https://lokmont-jekyll.netlify.com/" # the base hostname & protocol for your site, e.g. http://example.com
+url: "https://parksj0607.github.io/" # the base hostname & protocol for your site, e.g. http://example.com
 
 # Banner Section
-hero: 10.jpg
+hero: dog.jpg
 hero-title: Welcome to parksj blog
 hero-description: A Responsive Jekyll Blog Theme. Theme suitable for any kind of creators.
 
 # Author - Creator
 author-name: 박성준
-author-image: 8.jpg
+author-image: 10.jpg
 about-author: 학생입니다.
 author-email: elwlrh45@gmail.com
 author-twitter: https://twitter.com/
