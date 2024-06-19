@@ -5,15 +5,15 @@ baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://lokmont-jekyll.netlify.com/" # the base hostname & protocol for your site, e.g. http://example.com
 
 # Banner Section
-hero: 112.jpg
-hero-title: Welcome to Lokmont
+hero: 10.jpg
+hero-title: Welcome to parksj blog
 hero-description: A Responsive Jekyll Blog Theme. Theme suitable for any kind of creators.
 
 # Author - Creator
-author-name: Ben Campbell
-author-image: 10.jpg
-about-author: My name is Ben Campbell. I'm an actor and a musician. Retro wolf banjo succulen tsgoch ujang tumeric hammock offal.
-author-email: help.example@gmail.com
+author-name: 박성준
+author-image: 8.jpg
+about-author: 학생입니다.
+author-email: elwlrh45@gmail.com
 author-twitter: https://twitter.com/
 author-facebook: https://twitter.com/
 author-instagram: https://www.instagram.com/
