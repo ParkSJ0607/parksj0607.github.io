@@ -1,29 +1,15 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en-us">
 
   {% include head.html %}
-  
-  {% if page.url == '/' %}
-    {% assign class = 'body-post' %}
-  <body class="{{ class }}">
-  {% endif %}
-  
-    {% if site.google-analytics %}
-      {% include google-analytics.html %}
-    {% endif %}
 
-    <div class="full-page-container">
-      <div class="overlay"></div>
-      {% include header.html %}
-      {% include search.html %}
+  <body>
 
-        {{ content }}
+    {% include sidebar.html %}
 
-      {% include scroll-top.html %}
-      {% include footer.html %}
-    </div> <!-- /.full-page-container -->
+    <div class="content container">
+      {{ content }}
+    </div>
 
-    {% include javascripts.html %}
   </body>
-
 </html>

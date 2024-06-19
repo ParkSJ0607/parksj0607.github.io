@@ -1,177 +1,118 @@
-Lokmont - Simple & Minimal Theme for Jekyll
-=======
-<p>Lokmont is a simple and completely responsive theme for Jekyll, suitable for any kind of bloggers and writers. It was created to be minimal, clean and at the same time functional.</p>
+# Hyde
 
-Table of Contents
------------------
+Hyde is a brazen two-column [Jekyll](http://jekyllrb.com) theme that pairs a prominent sidebar with uncomplicated content. It's based on [Poole](http://getpoole.com), the Jekyll butler.
 
-*   [Demo](#demo)
-*   [Features](#features)
-*   [Deployment](#deployment)
-*   [Posts](#posts)
-*   [Other Authors](#authors)
-*   [Disqus Comments](#disqus)
-*   [Google Analytics](#analytics)
-*   [Update favicon](#favicon)
-*   [Credits](#credits)
-*   [License](#license)
-*   [Donate](#donate)
+![Hyde screenshot](https://f.cloud.github.com/assets/98681/1831228/42af6c6a-7384-11e3-98fb-e0b923ee0468.png)
 
-* * *
 
-### Demo
+## Contents
 
-Check the theme in action [Demo](https://lokmont-jekyll.netlify.com/)
+- [Usage](#usage)
+- [Options](#options)
+  - [Sidebar menu](#sidebar-menu)
+  - [Sticky sidebar content](#sticky-sidebar-content)
+  - [Themes](#themes)
+  - [Reverse layout](#reverse-layout)
+- [Development](#development)
+- [Author](#author)
+- [License](#license)
 
-![Main page preview](https://github.com/artemsheludko/lokmont/blob/master/images/home-page.jpg?raw=true)
 
-The post page would look like this:
+## Usage
 
-![Post page preview](https://github.com/artemsheludko/lokmont/blob/master/images/post-page.jpg?raw=true)
+Hyde is a theme built on top of [Poole](https://github.com/poole/poole), which provides a fully furnished Jekyll setup—just download and start the Jekyll server. See [the Poole usage guidelines](https://github.com/poole/poole#usage) for how to install and use Jekyll.
 
-* * *
 
-### Features
+## Options
 
-* 100% responsive and clean theme
-* Optimized for mobile devices
-* Minimal design
-* Valid HTML5 code
-* Included site search
-* Contact Page
-* Post sharing
-* Supports Mail Chimp Subscriber
-* Supports Disqus Comments
-* Social Media Profiles
-* Formspree form
-* Font Awesome fonts
-* Google Fonts
+Hyde includes some customizable options, typically applied via classes on the `<body>` element.
 
-* * *
 
-### Deployment
+### Sidebar menu
 
-To run the theme locally, navigate to the theme directory and run `bundle install` to install the dependencies, then run `jekyll serve` or `bundle exec jekyll serve` to start the Jekyll server.
+Create a list of nav links in the sidebar by assigning each Jekyll page the correct layout in the page's [front-matter](http://jekyllrb.com/docs/frontmatter/).
 
-I would recommend checking the [Deployment Methods](https://jekyllrb.com/docs/deployment-methods/) page on Jekyll website.
-
-* * *
-
-### Posts
-
-To create a new post, you can create a new markdown file inside the _posts directory by following the [recommended file structure](https://jekyllrb.com/docs/posts/#creating-post-files).
-
-```sh
-  ---
-  layout: post
-  title: 10 Best books of all time
-  date: 2017-10-27 18:09:50 +0300
-  img: 17.jpg
-  tags: [Books, Hobby]
-  author: Natali_Braxton # Optional
-  ---
-```        
-
-You can set the tags, author and the post image.
-
-Add post images to **/images/pages/** directory.
-
-For tags, try to not add space between two words, for example, `Ruby on Rails`, could be something like (`ruby-on-rails`, `Ruby_on_Rails`, or `Ruby-on-Rails`).
-
-* * *
-
-### Authors
-
-You can add other authors for your posts. In the beginning, create the author in the file `_config.yml`
-
-**For example:**
-
-```sh
-  # Other Authors - here you can add Other authors. For example Natali_Braxton
-  authors:
-    Natali_Braxton:
-      author-name: Natali Braxton
-      author-image: 111.jpg
-      about-author: My name is Natali Braxton. I love walking, I play the guitar in my spare time. And also write articles about different technologies.
-      author-email: natali.example@gmail.com
-      author-twitter: https://twitter.com/
-      author-facebook: https://twitter.com/
-      author-instagram: https://www.instagram.com/
-      author-pinterest: https://pinterest.com/
+```
+---
+layout: page
+title: About
+---
 ```
 
-Then add the author in a post. Save and you are done.
+**Why require a specific layout?** Jekyll will return *all* pages, including the `atom.xml`, and with an alphabetical sort order. To ensure the first link is *Home*, we exclude the `index.html` page from this list by specifying the `page` layout.
 
-```sh
-  ---
-  layout: post
-  title: 10 Best books of all time
-  date: 2017-10-27 18:09:50 +0300
-  img: 17.jpg
-  tags: [Books, Hobby]
-  author: Natali_Braxton
-  ---
+
+### Sticky sidebar content
+
+By default Hyde ships with a sidebar that affixes it's content to the bottom of the sidebar. You can optionally disable this by removing the `.sidebar-sticky` class from the sidebar's `.container`. Sidebar content will then normally flow from top to bottom.
+
+```html
+<!-- Default sidebar -->
+<div class="sidebar">
+  <div class="container sidebar-sticky">
+    ...
+  </div>
+</div>
+
+<!-- Modified sidebar -->
+<div class="sidebar">
+  <div class="container">
+    ...
+  </div>
+</div>
 ```
 
-* * *
 
-### Disqus
+### Themes
 
-Lokmont Theme comes with Disqus comments enabled.
+Hyde ships with eight optional themes based on the [base16 color scheme](https://github.com/chriskempson/base16). Apply a theme to change the color scheme (mostly applies to sidebar and links).
 
-Open `_config.yml` file, and change the `mr-brown` value on line 52 with your [Disqus account shortname](https://help.disqus.com/customer/portal/articles/466208).
+![Hyde in red](https://f.cloud.github.com/assets/98681/1831229/42b0b354-7384-11e3-8462-31b8df193fe5.png)
 
-```sh
-  # Comment Section (Disqus)
-  disqus-identifier: mr-brown # Add your shortname for Disqus Comment. For example mr-brown
-```     
+There are eight themes available at this time.
 
-That’s all you need to setup Disqus from the theme side. If you get any issue regarding that comments are unable to load. First, make sure you have [registered your website with Disqus (Step 1)](https://help.disqus.com/customer/portal/articles/466182-publisher-quick-start-guide).
+![Hyde theme classes](https://f.cloud.github.com/assets/98681/1817044/e5b0ec06-6f68-11e3-83d7-acd1942797a1.png)
 
-And also check [Disqus troubleshooting guide](https://help.disqus.com/customer/portal/articles/472007-i-m-receiving-the-message-%22we-were-unable-to-load-disqus-%22) if you still have issues.
+To use a theme, add anyone of the available theme classes to the `<body>` element in the `default.html` layout, like so:
 
-* * *
+```html
+<body class="theme-base-08">
+  ...
+</body>
+```
 
-### Analytics
+To create your own theme, look to the Themes section of [included CSS file](https://github.com/poole/hyde/blob/master/public/css/hyde.css). Copy any existing theme (they're only a few lines of CSS), rename it, and change the provided colors.
 
-To integrate Google Analytics, open `_config.yml`, and add your Google Analytics identifier.
-```sh
-  # Google Analytics
-  google-analytics: # Add your identifier. For example UA-99631805-1
-```     
+### Reverse layout
 
-* * *
+![Hyde with reverse layout](https://f.cloud.github.com/assets/98681/1831230/42b0d3ac-7384-11e3-8d54-2065afd03f9e.png)
 
-### Favicon
+Hyde's page orientation can be reversed with a single class.
 
-You can find the current favicon (favicon.ico) inside the theme root directory, just replace it with your new favicon.
+```html
+<body class="layout-reverse">
+  ...
+</body>
+```
 
-* * *
 
-### Credits
+## Development
 
-We have used the following scripts, fonts or other files as listed.
+Hyde has two branches, but only one is used for active development.
 
-*   [Google Fonts](https://fonts.google.com/) (Dancing+Script, PT+Serif, Lato, Roboto).
-*   [Font Awesome](https://fontawesome.com/v4.7.0/)
-*   [FitVids.js](http://fitvidsjs.com/)
-*   [jQuery-viewport-checker](https://github.com/dirkgroenen/jQuery-viewport-checker)
-*   [Zoom](https://github.com/fat/zoom.js)
-*   [Transition](http://getbootstrap.com/javascript/#transitions)
-*   [jQuery.com](https://jquery.com/)
-*   [Simple-Jekyll-Search](https://github.com/christian-fei/Simple-Jekyll-Search)
-*   Preview Images [unsplash.com](https://unsplash.com/), [pexels.com](https://www.pexels.com/)
+- `master` for development.  **All pull requests should be submitted against `master`.**
+- `gh-pages` for our hosted site, which includes our analytics tracking code. **Please avoid using this branch.**
 
-* * *
 
-### License
+## Author
 
-MIT License
+**Mark Otto**
+- <https://github.com/mdo>
+- <https://twitter.com/mdo>
 
-* * *
 
-### Donate
+## License
 
-<p>If you want to show your appreciation, buy me one <a href="https://www.buymeacoffee.com/artemsheludko" target="_blank"><img src="https://www.buymeacoffee.com/assets/img/custom_images/orange_img.png" alt="Buy Me A Coffee" style="height: auto !important;width: auto !important;" ></a> ! Every five cups of coffee and a new theme for Jekyll is ready 😋</p>
-<p>Either way, your support is a way to thank me ❤️</p>
-<p align="center"><b>Thank you for your support!</b></p>
+Open sourced under the [MIT license](LICENSE.md).
+
+<3
