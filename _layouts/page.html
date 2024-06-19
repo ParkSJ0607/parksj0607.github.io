@@ -1,18 +1,14 @@
 ---
 layout: default
 ---
-<div class="wrapper">
-<div class="page">
+<div class="page-header" style="background: url({{"/images/pages/" | prepend: site.baseurl | append : page.image}})">
+  <h1 class="page-title">{{ page.title | escape }}</h1>
+</div>
 
-  <header class="post-header">
-    <h1 class="post-title">{{ page.title }}</h1>
-  </header>
+<article class="page">
 
-  {% include page_divider.html %}
-
-  <article class="post-content">
+  <div class="page-content">
     {{ content }}
-  </article>
+  </div>
 
-</div>
-</div>
+</article> <!-- End Page -->
